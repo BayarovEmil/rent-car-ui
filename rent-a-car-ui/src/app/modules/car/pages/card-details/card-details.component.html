@@ -1,0 +1,21 @@
+<div class="card-info-container">
+  <div class="card-info-form">
+    <form class="mt-3">
+      <div class="mb-3">
+        <label for="cardNumber" class="form-label"  style="color: #ff0000;">Card Number</label>
+        <input type="text" class="form-control" id="cardNumber" placeholder="Enter your card number">
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="expiryDate" class="form-label" style="color: #ff0000;">Expiry Date</label>
+          <input type="text" class="form-control" id="expiryDate" placeholder="MM/YYYY">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="cvc" class="form-label" style="color: #ff0000;">CVC</label>
+          <input type="text" class="form-control" id="cvc" placeholder="CVC">
+        </div>
+      </div>
+      <button class="btn btn-primary" type="button" (click)="goToPayment()">Proceed to Payment</button>
+    </form>
+  </div>
+</div>

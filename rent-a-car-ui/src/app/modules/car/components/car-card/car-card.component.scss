@@ -1,0 +1,16 @@
+div {
+  &.card {
+    max-height: 450px;
+    min-height: 450px;
+  }
+}
+i {
+  cursor: pointer;
+}
+
+.info{
+  width: 250px;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+}

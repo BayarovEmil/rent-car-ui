@@ -1,0 +1,59 @@
+<div class="container mt-4">
+  <h2>Car Details</h2>
+  <hr>
+
+  <div class="row" *ngIf="selectedCar">
+    <div class="col-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ selectedCar.brand }} {{ selectedCar.model }}</h5>
+          <p class="card-text">Fuel Type: {{ selectedCar.fuelType }}</p>
+          <p class="card-text">Daily Rental Rate: {{ selectedCar.dailyRentalRate }}</p>
+          <p class="card-text">Manufacturing Year: {{ selectedCar.manufacturingYear }}</p>
+          <p class="card-text">Rate: {{ selectedCar.rate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row mt-4">
+    <div class="col-12">
+      <h3>Feedbacks</h3>
+    </div>
+    <div class="col-12" *ngFor="let feedback of feedbacks.content">
+      <div class="card mb-3">
+        <div class="card-body">
+          <p class="card-text">Comment: {{ feedback.comment }}</p>
+          <p class="card-text">Note: {{ feedback.note }}</p>
+          <p class="card-text">Owner: {{ feedback.owner }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4" >
+    <div class="col-12">
+      <nav aria-label="Feedbacks Pagination">
+        <ul class="pagination justify-content-center">
+          <li class="page-item" [class.disabled]="page === 0">
+            <a class="page-link" (click)="goToFirstPage()">First</a>
+          </li>
+          <li class="page-item" [class.disabled]="page === 0">
+            <a class="page-link" (click)="goToPreviousPage()">Previous</a>
+          </li>
+          <li class="page-item" *ngFor="let pageIndex of pages" [class.active]="page === pageIndex">
+            <a class="page-link" (click)="gotToPage(pageIndex)">{{ pageIndex + 1 }}</a>
+          </li>
+          <li class="page-item" [class.disabled]="isLastPage">
+            <a class="page-link" (click)="goToNextPage()">Next</a>
+          </li>
+          <li class="page-item" [class.disabled]="isLastPage">
+            <a class="page-link" (click)="goToLastPage()">Last</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
